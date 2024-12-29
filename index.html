@@ -92,26 +92,59 @@
             background-color: white;
         }
 
-        .join-button {
+        .button {
             display: inline-block;
             background-color: var(--primary-color);
             color: white;
             padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
-            margin-top: 2rem;
+            margin: 1rem;
             font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
         }
 
-        .join-button:hover {
+        .button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
             background-color: #ff1493;
         }
 
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: white;
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-button img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Rest of your existing styles */
         h1 {
             font-size: 3rem;
             margin-bottom: 1.5rem;
@@ -224,6 +257,11 @@
             section {
                 padding: 6rem 1rem 3rem;
             }
+
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -240,7 +278,17 @@
             <img src="Nocturnals.gif" alt="Nocturnals Logo" class="logo">
             <h1>Welcome to Nocturnals</h1>
             <p class="subtitle">Join our gaming community!</p>
-            <a href="https://discord.gg/babyboos" class="join-button">Join Our Discord</a>
+            
+            <div class="social-buttons">
+                <a href="https://discord.gg/babyboos" class="social-button">
+                    <img src="discord.png" alt="Discord">
+                    Discord
+                </a>
+                <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
+                    <img src="tiktok.png" alt="TikTok">
+                    TikTok
+                </a>
+            </div>
         </div>
     </section>
 
@@ -308,6 +356,17 @@
             <div class="content-card">
                 <p class="contact-info">Have questions? Reach out to us at:</p>
                 <a href="mailto:nocturnalsbusiness@gmail.com" class="email">nocturnalsbusiness@gmail.com</a>
+                
+                <div class="social-buttons">
+                    <a href="https://discord.gg/babyboos" class="social-button">
+                        <img src="discord.png" alt="Discord">
+                        Join our Discord
+                    </a>
+                    <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
+                        <img src="tiktok.png" alt="TikTok">
+                        Follow us on TikTok
+                    </a>
+                </div>
             </div>
         </div>
     </section>
