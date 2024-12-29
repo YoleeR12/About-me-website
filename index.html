@@ -132,6 +132,7 @@
             font-weight: 600;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
         .social-button:hover {
@@ -333,7 +334,7 @@
             <p class="subtitle">Join our gaming community!</p>
             
             <div class="social-buttons">
-                <a href="https://discord.gg/babyboos" class="social-button">
+                <a onclick="confirmDiscord(event)" class="social-button">
                     <img src="discord.png" alt="Discord">
                     Discord
                 </a>
@@ -359,7 +360,7 @@
                         <li>Use our LFG to find new friends and duos! 🤝</li>
                     </ul>
                     
-                    <p>We primarily focus on Valorant gameplay, however, we host constant events to enjoy other games such as:</p>
+                    <p>We primarily focus on VALORANT, however, we also enjoy other games such as:</p>
                     
                     <div class="features-grid">
                         <div class="feature-card">Genshin Impact</div>
@@ -372,10 +373,10 @@
 
                     <p>But that's not all! We also organize exciting community events:</p>
                     <div class="features-grid">
+                        <div class="feature-card">🎬 VALORANT Customs</div>
                         <div class="feature-card">🎬 Movie Nights</div>
-                        <div class="feature-card">🃏 Poker Nights</div>
                         <div class="feature-card">🎮 Gaming Nights</div>
-                        <div class="feature-card">🎉 Adult Events</div>
+                        <div class="feature-card">🎉 Adult Events (Sometimes)</div>
                     </div>
 
                     <p>We have our own little family and we can not wait for you to join us ❤️</p>
@@ -422,7 +423,7 @@
                 <a href="mailto:nocturnalsbusiness@gmail.com" class="email">nocturnalsbusiness@gmail.com</a>
                 
                 <div class="social-buttons">
-                    <a href="https://discord.gg/babyboos" class="social-button">
+                    <a onclick="confirmDiscord(event)" class="social-button">
                         <img src="discord.png" alt="Discord">
                         Join our Discord
                     </a>
@@ -434,5 +435,14 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function confirmDiscord(event) {
+            event.preventDefault();
+            if (confirm('Make sure you read the rules!')) {
+                window.location.href = 'https://discord.gg/babyboos';
+            }
+        }
+    </script>
 </body>
 </html>
