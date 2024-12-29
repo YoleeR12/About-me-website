@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Previous head section remains the same until the logo class -->
 <head>
-    <!-- Previous head content remains identical -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nocturnals Community</title>
     <style>
-        /* Previous styles remain identical until the logo class */
-        
+        :root {
+            --primary-color: #ff69b4;  /* Hot pink */
+            --secondary-color: #ffb6c1; /* Light pink */
+            --text-color: #2c3e50;
+            --bg-color: #fff0f5;       /* Lavender blush */
+            --accent-color: #fff5f8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-color);
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #home {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffb6c1 100%);
+        }
+
         .logo {
             width: 200px;
             height: 200px;
@@ -14,6 +90,78 @@
             object-fit: cover;
             border: 3px solid var(--primary-color);
             background-color: white;
+        }
+
+        .join-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .join-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+            background-color: #ff1493;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .content-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .game-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .email {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
         }
 
         .minecraft-info {
@@ -52,11 +200,40 @@
             left: -1.5rem;
         }
 
-        /* Previous media queries and styles remain identical */
+        code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav a {
+                margin: 0 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 6rem 1rem 3rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Previous nav section remains identical -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#minecraft">Minecraft</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
     <section id="home">
         <div class="container">
@@ -67,7 +244,25 @@
         </div>
     </section>
 
-    <!-- Previous about section remains identical -->
+    <section id="about">
+        <div class="container">
+            <h1>About Nocturnals</h1>
+            <div class="content-card">
+                <p>Nocturnals is a discord server for people to hang out and play games with. We're a friendly community focused on having fun and making new friends!</p>
+                
+                <div class="game-grid">
+                    <div class="game-card">
+                        <h3>Valorant</h3>
+                        <p>Our main game! Join us for custom matches every Friday.</p>
+                    </div>
+                    <div class="game-card">
+                        <h3>Other Games</h3>
+                        <p>We play various other games too - there's something for everyone!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="minecraft">
         <div class="container">
@@ -81,7 +276,6 @@
 
                     <h3>Key Features</h3>
                     <ul class="rules-list">
-                        <li>Interactive World Map: Explore at <a href="https://noctumap.yoleer.eu/" target="_blank">noctumap.yoleer.eu</a></li>
                         <li><code>/rtp</code> - Random Teleport</li>
                         <li><code>/claim</code> - Protect your land</li>
                         <li><code>/tpa</code> - Teleport to friends</li>
@@ -100,7 +294,7 @@
                     <h3>Additional Info</h3>
                     <ul class="rules-list">
                         <li>Server restarts every 12 hours</li>
-                        <li>Minecraft Version: 1.21.1 (Regular updates to latest version)</li>
+                        <li>Minecraft Version: 1.21.4 (Regular updates to latest version)</li>
                         <li>Remember to grab the Minecraft Role in Discord for updates!</li>
                     </ul>
                 </div>
@@ -108,6 +302,14 @@
         </div>
     </section>
 
-    <!-- Previous contact section remains identical -->
+    <section id="contact">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <div class="content-card">
+                <p class="contact-info">Have questions? Reach out to us at:</p>
+                <a href="mailto:nocturnalsbusiness@gmail.com" class="email">nocturnalsbusiness@gmail.com</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
