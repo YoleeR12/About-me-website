@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name=
-"viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nocturnals Community</title>
     <style>
         :root {
-            --primary-color: #ff69b4;  /* Hot pink */
-            --secondary-color: #ffb6c1; /* Light pink */
+            --primary-color: #ff69b4;
+            --secondary-color: #ffb6c1;
             --text-color: #2c3e50;
-            --bg-color: #fff0f5;       /* Lavender blush */
+            --bg-color: #fff0f5;
             --accent-color: #fff5f8;
         }
 
@@ -45,6 +44,7 @@
             text-decoration: none;
             margin: 0 1.5rem;
             font-weight: 500;
+            position: relative;
             padding: 0.5rem 0;
         }
 
@@ -110,7 +110,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
             background-color: #ff1493;
-            transition: all 0.4s;
         }
 
         .social-buttons {
@@ -146,6 +145,74 @@
             object-fit: contain;
         }
 
+        .social-button img[alt="TikTok"] {
+            height: 32px;
+            width: auto;
+        }
+
+        .social-button img[alt="Discord"] {
+            height: 30px;
+            width: auto;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .reasons-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .reasons-list li {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--accent-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reasons-list li::before {
+            content: "✨";
+            font-size: 1.2rem;
+        }
+
         h1 {
             font-size: 3rem;
             margin-bottom: 1.5rem;
@@ -166,25 +233,6 @@
             margin: 2rem 0;
             max-width: 800px;
             width: 100%;
-        }
-
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .game-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
         }
 
         .minecraft-info {
@@ -217,10 +265,28 @@
         }
 
         .rules-list li::before {
-            content: "\2022";
+            content: "•";
             color: var(--primary-color);
             position: absolute;
             left: -1.5rem;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .email {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
         }
 
         @media (max-width: 768px) {
@@ -244,6 +310,10 @@
             .social-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .reasons-list li {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -279,17 +349,37 @@
         <div class="container">
             <h1>About Nocturnals</h1>
             <div class="content-card">
-                <p>Nocturnals is a vibrant gaming community where people come together to enjoy games, make friends, and share memorable experiences!</p>
-                
-                <div class="game-grid">
-                    <div class="game-card">
-                        <h3>Valorant</h3>
-                        <p>Join us every Friday for thrilling custom matches and team play!</p>
+                <div class="about-content">
+                    <p>Welcome to Nocturnals! As the name suggests, we are a server dedicated to making your lonely tilting gaming nights into a night of <span class="highlight">vibezz</span> ❤️ We are a safe space for everyone so feel free to be yourself with us!</p>
+
+                    <ul class="reasons-list">
+                        <li>As the name suggests, we game all night! 🌙</li>
+                        <li>Safe space for girl gamers and LGBTQ+ friendly! 🌈</li>
+                        <li>Valorant demons, night and day! 🎮</li>
+                        <li>Use our LFG to find new friends and duos! 🤝</li>
+                    </ul>
+                    
+                    <p>We primarily focus on Valorant gameplay, however, we host constant events to enjoy other games such as:</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">Genshin Impact</div>
+                        <div class="feature-card">Minecraft</div>
+                        <div class="feature-card">League of Legends</div>
+                        <div class="feature-card">TFT</div>
+                        <div class="feature-card">Apex Legends</div>
+                        <div class="feature-card">Among Us</div>
                     </div>
-                    <div class="game-card">
-                        <h3>Other Games</h3>
-                        <p>From casual games to competitive ones, we have something for everyone!</p>
+
+                    <p>But that's not all! We also organize exciting community events:</p>
+                    <div class="features-grid">
+                        <div class="feature-card">🎬 Movie Nights</div>
+                        <div class="feature-card">🃏 Poker Nights</div>
+                        <div class="feature-card">🎮 Gaming Nights</div>
+                        <div class="feature-card">🎉 Adult Events</div>
                     </div>
+
+                    <p>We have our own little family and we can not wait for you to join us ❤️</p>
+                    <p class="highlight text-center">So what are you waiting for?</p>
                 </div>
             </div>
         </div>
@@ -300,18 +390,24 @@
             <h1>Minecraft Server</h1>
             <div class="content-card">
                 <div class="minecraft-info">
-                    <h3>Join the Fun</h3>
-                    <p>Connect with players on Discord and team up for an epic Minecraft experience. Don’t forget to grab the Minecraft Role for updates!</p>
+                    <h3>Server IPs</h3>
+                    <p><strong>Java:</strong> <span class="server-ip">mc.babyboos.eu</span></p>
+                    <p><strong>Bedrock:</strong> <span class="server-ip">mcb.babyboos.eu</span></p>
+                    <p><strong>Bedrock Port:</strong> <span class="server-ip">19132</span></p>
 
-                    <h3>Server Details</h3>
-                    <p class="server-ip">Java: mc.babyboos.eu</p>
-                    <p class="server-ip">Bedrock: mcb.babyboos.eu (Port: 19132)</p>
-
-                    <h3>Rules</h3>
+                    <h3>Key Features</h3>
                     <ul class="rules-list">
-                        <li>Be respectful to all players.</li>
-                        <li>No cheating or using exploits.</li>
-                        <li>Have fun and play fair!</li>
+                        <li><code>/rtp</code> - Random Teleport</li>
+                        <li><code>/claim</code> - Protect your land</li>
+                        <li><code>/tpa</code> - Teleport to friends</li>
+                        <li>VeinMiner - Hold Shift to mine veins of ore quickly</li>
+                    </ul>
+
+                    <h3>Additional Info</h3>
+                    <ul class="rules-list">
+                        <li>Server restarts every 12 hours</li>
+                        <li>Minecraft Version: 1.21.4 (Regular updates to latest version)</li>
+                        <li>Remember to grab the Minecraft Role in Discord for updates!</li>
                     </ul>
                 </div>
             </div>
@@ -321,7 +417,22 @@
     <section id="contact">
         <div class="container">
             <h1>Contact Us</h1>
-            <p class="subtitle">Stay connected through our platforms:</p>
-            <div class="social-buttons">
-                <a href="https://discord.gg/babyboos" class="social-button">
-                    <img src="discord.png
+            <div class="content-card">
+                <p class="contact-info">Have questions? Reach out to us at:</p>
+                <a href="mailto:nocturnalsbusiness@gmail.com" class="email">nocturnalsbusiness@gmail.com</a>
+                
+                <div class="social-buttons">
+                    <a href="https://discord.gg/babyboos" class="social-button">
+                        <img src="discord.png" alt="Discord">
+                        Join our Discord
+                    </a>
+                    <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
+                        <img src="tiktok.png" alt="TikTok">
+                        Follow us on TikTok
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
