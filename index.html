@@ -44,7 +44,6 @@
             text-decoration: none;
             margin: 0 1.5rem;
             font-weight: 500;
-            position: relative;
             padding: 0.5rem 0;
         }
 
@@ -110,6 +109,7 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
             background-color: #ff1493;
+            transition: all 0.4s;
         }
 
         .social-buttons {
@@ -145,16 +145,6 @@
             object-fit: contain;
         }
 
-        .social-button img[alt="TikTok"] {
-            height: 32px;
-            width: auto;
-        }
-
-        .social-button img[alt="Discord"] {
-            height: 30px;
-            width: auto;
-        }
-
         h1 {
             font-size: 3rem;
             margin-bottom: 1.5rem;
@@ -179,7 +169,7 @@
 
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -194,17 +184,6 @@
 
         .game-card:hover {
             transform: translateY(-5px);
-        }
-
-        .contact-info {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-        }
-
-        .email {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
         }
 
         .minecraft-info {
@@ -237,17 +216,10 @@
         }
 
         .rules-list li::before {
-            content: "•";
+            content: "\2022";
             color: var(--primary-color);
             position: absolute;
             left: -1.5rem;
-        }
-
-        code {
-            background: #f8f9fa;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: monospace;
         }
 
         @media (max-width: 768px) {
@@ -306,16 +278,16 @@
         <div class="container">
             <h1>About Nocturnals</h1>
             <div class="content-card">
-                <p>Nocturnals is a discord server for people to hang out and play games with. We're a friendly community focused on having fun and making new friends!</p>
+                <p>Nocturnals is a vibrant gaming community where people come together to enjoy games, make friends, and share memorable experiences!</p>
                 
                 <div class="game-grid">
                     <div class="game-card">
                         <h3>Valorant</h3>
-                        <p>Our main game! Join us for custom matches every Friday.</p>
+                        <p>Join us every Friday for thrilling custom matches and team play!</p>
                     </div>
                     <div class="game-card">
                         <h3>Other Games</h3>
-                        <p>We play various other games too - there's something for everyone!</p>
+                        <p>From casual games to competitive ones, we have something for everyone!</p>
                     </div>
                 </div>
             </div>
@@ -327,33 +299,17 @@
             <h1>Minecraft Server</h1>
             <div class="content-card">
                 <div class="minecraft-info">
-                    <h3>Server IPs</h3>
-                    <p><strong>Java:</strong> <span class="server-ip">Nocturnals.yoleer.eu</span></p>
-                    <p><strong>Bedrock:</strong> <span class="server-ip">Nocturnalsrock.yoleer.eu</span></p>
-                    <p><strong>Port:</strong> <span class="server-ip">19132</span></p>
+                    <h3>Join the Fun</h3>
+                    <p>Connect with players on Discord and team up for an epic Minecraft experience. Don’t forget to grab the Minecraft Role for updates!</p>
 
-                    <h3>Key Features</h3>
-                    <ul class="rules-list">
-                        <li><code>/rtp</code> - Random Teleport</li>
-                        <li><code>/claim</code> - Protect your land</li>
-                        <li><code>/tpa</code> - Teleport to friends</li>
-                        <li>VeinMiner - Hold Shift to mine veins of ore quickly</li>
-                    </ul>
+                    <h3>Server Details</h3>
+                    <p class="server-ip">mc.nocturnals.gg</p>
 
-                    <h3>Server Rules</h3>
+                    <h3>Rules</h3>
                     <ul class="rules-list">
-                        <li>No griefing (Use /claim to protect your stuff)</li>
-                        <li>Do NOT claimtrap other players</li>
-                        <li>PVP is allowed, but don't spawn camp</li>
-                        <li>Targeting and repeatedly killing a player on spawn = Permanent Ban</li>
-                        <li>No cheats or hacks – this includes XRAY (We will know 👀)</li>
-                    </ul>
-
-                    <h3>Additional Info</h3>
-                    <ul class="rules-list">
-                        <li>Server restarts every 12 hours</li>
-                        <li>Minecraft Version: 1.21.4 (Regular updates to latest version)</li>
-                        <li>Remember to grab the Minecraft Role in Discord for updates!</li>
+                        <li>Be respectful to all players.</li>
+                        <li>No cheating or using exploits.</li>
+                        <li>Have fun and play fair!</li>
                     </ul>
                 </div>
             </div>
@@ -363,22 +319,5 @@
     <section id="contact">
         <div class="container">
             <h1>Contact Us</h1>
-            <div class="content-card">
-                <p class="contact-info">Have questions? Reach out to us at:</p>
-                <a href="mailto:nocturnalsbusiness@gmail.com" class="email">nocturnalsbusiness@gmail.com</a>
-                
-                <div class="social-buttons">
-                    <a href="https://discord.gg/babyboos" class="social-button">
-                        <img src="discord.png" alt="Discord">
-                        Join our Discord
-                    </a>
-                    <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
-                        <img src="tiktok.png" alt="TikTok">
-                        Follow us on TikTok
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+            <p class="subtitle">Stay connected through our platforms:</p>
+            <div class="social-buttons
