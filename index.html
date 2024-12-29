@@ -290,6 +290,37 @@
             font-family: monospace;
         }
 
+        /* New styles for clipboard functionality */
+        .copyable {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .copyable:hover {
+            background-color: #e9ecef;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+        }
+
+        .copyable:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 1rem;
@@ -392,9 +423,9 @@
             <div class="content-card">
                 <div class="minecraft-info">
                     <h3>Server IPs</h3>
-                    <p><strong>Java:</strong> <span class="server-ip">mc.babyboos.eu</span></p>
-                    <p><strong>Bedrock:</strong> <span class="server-ip">mcb.babyboos.eu</span></p>
-                    <p><strong>Bedrock Port:</strong> <span class="server-ip">19132</span></p>
+                    <p><strong>Java:</strong> <span class="server-ip copyable" onclick="copyToClipboard('mc.babyboos.eu', this)">mc.babyboos.eu<span class="tooltip">Click to copy</span></span></p>
+                    <p><strong>Bedrock:</strong> <span class="server-ip copyable" onclick="copyToClipboard('mcb.babyboos.eu', this)">mcb.babyboos.eu<span class="tooltip">Click to copy</span></span></p>
+                    <p><strong>Bedrock Port:</strong> <span class="server-ip copyable" onclick="copyToClipboard('19132', this)">19132<span class="tooltip">Click to copy</span></span></p>
 
                     <h3>Key Features</h3>
                     <ul class="rules-list">
@@ -420,29 +451,4 @@
             <h1>Contact Us</h1>
             <div class="content-card">
                 <p class="contact-info">Have questions? Reach out to us at:</p>
-                <a href="mailto:nocturnalsbusiness@gmail.com" class="email">nocturnalsbusiness@gmail.com</a>
-                
-                <div class="social-buttons">
-                    <a onclick="confirmDiscord(event)" class="social-button">
-                        <img src="discord.png" alt="Discord">
-                        Join our Discord
-                    </a>
-                    <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
-                        <img src="tiktok.png" alt="TikTok">
-                        Follow us on TikTok
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function confirmDiscord(event) {
-            event.preventDefault();
-            if (confirm('Make sure you read the rules!')) {
-                window.location.href = 'https://discord.gg/babyboos';
-            }
-        }
-    </script>
-</body>
-</html>
+                <a href="mailto:nocturnalsbusiness@gmail.com" class="email copyable" onclick="copyToClipboard('nocturnalsbusiness@gmail.com', this)">nocturnalsb
