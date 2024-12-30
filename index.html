@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -334,10 +336,10 @@
             <p class="subtitle">Join our gaming community!</p>
             
             <div class="social-buttons">
-                <button id="discordBtn" class="social-button">
+                <a onclick="confirmDiscord(event)" class="social-button">
                     <img src="discord.png" alt="Discord">
                     Discord
-                </button>
+                </a>
                 <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
                     <img src="tiktok.png" alt="TikTok">
                     TikTok
@@ -347,70 +349,102 @@
     </section>
 
     <section id="about">
-        <div class="container about-content">
-            <h2>About Nocturnals</h2>
-            <p>We are a vibrant gaming community where fun, teamwork, and creativity meet!</p>
+        <div class="container">
+            <h1>About Nocturnals</h1>
+            <div class="content-card">
+                <div class="about-content">
+                    <p>Welcome to Nocturnals! As the name suggests, we are a server dedicated to making your lonely tilting gaming nights into a night of <span class="highlight">vibezz</span> ❤️ We are a safe space for everyone so feel free to be yourself with us!</p>
+
+                    <ul class="reasons-list">
+                        <li>As the name suggests, we game all night! 🌙</li>
+                        <li>Safe space for girl gamers and LGBTQ+ friendly! 🌈</li>
+                        <li>Valorant demons, night and day! 🎮</li>
+                        <li>Use our LFG to find new friends and duos! 🤝</li>
+                    </ul>
+                    
+                    <p>We primarily focus on VALORANT, however, we also enjoy other games such as:</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">Genshin Impact</div>
+                        <div class="feature-card">Minecraft</div>
+                        <div class="feature-card">League of Legends</div>
+                        <div class="feature-card">TFT</div>
+                        <div class="feature-card">Apex Legends</div>
+                        <div class="feature-card">Among Us</div>
+                    </div>
+
+                    <p>But that's not all! We also organize exciting community events:</p>
+                    <div class="features-grid">
+                        <div class="feature-card">🎬 VALORANT Customs</div>
+                        <div class="feature-card">🎬 Movie Nights</div>
+                        <div class="feature-card">🎮 Gaming Nights</div>
+                        <div class="feature-card">🎉 Adult Events (Sometimes)</div>
+                    </div>
+
+                    <p>We have our own little family and we can not wait for you to join us ❤️</p>
+                    <p class="highlight text-center">So what are you waiting for?</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="minecraft">
-        <div class="container minecraft-info">
-            <h3>Our Minecraft Server</h3>
-            <p>Join us for an exciting adventure in our Minecraft world!</p>
+        <div class="container">
+            <h1>Minecraft Server</h1>
             <div class="content-card">
-                <h4>Server IP:</h4>
-                <div class="server-ip">play.nocturnalsmc.com</div>
+                <div class="minecraft-info">
+                    <h3>Server IPs</h3>
+                    <p><strong>Java:</strong> <span class="server-ip">mc.babyboos.eu</span></p>
+                    <p><strong>Bedrock:</strong> <span class="server-ip">mcb.babyboos.eu</span></p>
+                    <p><strong>Bedrock Port:</strong> <span class="server-ip">19132</span></p>
+
+                    <h3>Key Features</h3>
+                    <ul class="rules-list">
+                        <li><code>/rtp</code> - Random Teleport</li>
+                        <li><code>/claim</code> - Protect your land</li>
+                        <li><code>/tpa</code> - Teleport to friends</li>
+                        <li>VeinMiner - Hold Shift to mine veins of ore quickly</li>
+                    </ul>
+
+                    <h3>Additional Info</h3>
+                    <ul class="rules-list">
+                        <li>Server restarts every 12 hours</li>
+                        <li>Minecraft Version: 1.21.4 (Regular updates to latest version)</li>
+                        <li>Remember to grab the Minecraft Role in Discord for updates!</li>
+                    </ul>
+                </div>
             </div>
-            <h3>Server Rules</h3>
-            <ul class="rules-list">
-                <li>Be respectful to others.</li>
-                <li>Griefing is prohibited.</li>
-                <li>No spamming in chat.</li>
-            </ul>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
-            <h3>Contact Us</h3>
-            <p>If you have any questions, feel free to reach out!</p>
-            <div class="contact-info">
-                <p>Email us at: <a href="mailto:nocturnals@domain.com" class="email">nocturnals@domain.com</a></p>
+            <h1>Contact Us</h1>
+            <div class="content-card">
+                <p class="contact-info">Have questions? Reach out to us at:</p>
+                <a href="mailto:nocturnalsbusiness@gmail.com" class="email">nocturnalsbusiness@gmail.com</a>
+                
+                <div class="social-buttons">
+                    <a onclick="confirmDiscord(event)" class="social-button">
+                        <img src="discord.png" alt="Discord">
+                        Join our Discord
+                    </a>
+                    <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
+                        <img src="tiktok.png" alt="TikTok">
+                        Follow us on TikTok
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Popup Overlay and Content -->
-    <div id="popupOverlay" class="popup-overlay">
-        <div class="popup-content">
-            <h3>Join Our Discord Community</h3>
-            <p>Please make sure to read the rules in the Discord server to ensure a positive experience for everyone! 💖</p>
-            <button id="joinDiscordBtn" class="btn">Join Discord</button>
-            <button id="cancelBtn" class="cancel-btn">Cancel</button>
-        </div>
-    </div>
-
     <script>
-        // JavaScript to handle popup behavior
-        const discordBtn = document.getElementById('discordBtn');
-        const popupOverlay = document.getElementById('popupOverlay');
-        const joinDiscordBtn = document.getElementById('joinDiscordBtn');
-        const cancelBtn = document.getElementById('cancelBtn');
-
-        // Show popup
-        discordBtn.addEventListener('click', () => {
-            popupOverlay.style.display = 'flex';
-        });
-
-        // Join Discord button click
-        joinDiscordBtn.addEventListener('click', () => {
-            window.location.href = 'https://discord.gg/babyboos';
-        });
-
-        // Cancel button click
-        cancelBtn.addEventListener('click', () => {
-            popupOverlay.style.display = 'none';
-        });
+        function confirmDiscord(event) {
+            event.preventDefault();
+            if (confirm('Make sure you read the rules in the discord!')) {
+                window.location.href = 'https://discord.gg/babyboos';
+            }
+        }
     </script>
 </body>
 </html>
