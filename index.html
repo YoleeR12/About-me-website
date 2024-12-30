@@ -290,110 +290,6 @@
             font-family: monospace;
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 2rem;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            animation: modalSlideIn 0.3s ease-out;
-            box-shadow: 0 4px 20px rgba(255, 105, 180, 0.2);
-        }
-
-        @keyframes modalSlideIn {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .modal-body {
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .modal-body p {
-            margin-bottom: 1rem;
-        }
-
-        .close-button {
-            position: absolute;
-            right: 1.5rem;
-            top: 1rem;
-            font-size: 1.5rem;
-            color: #666;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close-button:hover {
-            color: var(--primary-color);
-        }
-
-        .modal-buttons {
-            display: flex;
-            justify-content: flex-end;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .modal-button {
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .modal-button.confirm {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .modal-button.cancel {
-            background-color: #f0f0f0;
-            color: var(--text-color);
-        }
-
-        .modal-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
-        }
-
-        .modal-button.confirm:hover {
-            background-color: #ff1493;
-        }
-
-        .modal-button.cancel:hover {
-            background-color: #e0e0e0;
-        }
-
         @media (max-width: 768px) {
             nav {
                 padding: 1rem;
@@ -438,10 +334,10 @@
             <p class="subtitle">Join our gaming community!</p>
             
             <div class="social-buttons">
-                <a onclick="showDiscordModal(event)" class="social-button">
+                <button id="discordBtn" class="social-button">
                     <img src="discord.png" alt="Discord">
                     Discord
-                </a>
+                </button>
                 <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
                     <img src="tiktok.png" alt="TikTok">
                     TikTok
@@ -451,46 +347,70 @@
     </section>
 
     <section id="about">
-        <div class="container">
-            <h1>About Nocturnals</h1>
-            <div class="content-card">
-                <div class="about-content">
-                    <p>Welcome to Nocturnals! As the name suggests, we are a server dedicated to making your lonely tilting gaming nights into a night of <span class="highlight">vibezz</span> ❤️ We are a safe space for everyone so feel free to be yourself with us!</p>
-
-                    <ul class="reasons-list">
-                        <li>As the name suggests, we game all night! 🌙</li>
-                        <li>Safe space for girl gamers and LGBTQ+ friendly! 🌈</li>
-                        <li>Valorant demons, night and day! 🎮</li>
-                        <li>Use our LFG to find new friends and duos! 🤝</li>
-                    </ul>
-                    
-                    <p>We primarily focus on VALORANT, however, we also enjoy other games such as:</p>
-                    
-                    <div class="features-grid">
-                        <div class="feature-card">Genshin Impact</div>
-                        <div class="feature-card">Minecraft</div>
-                        <div class="feature-card">League of Legends</div>
-                        <div class="feature-card">TFT</div>
-                        <div class="feature-card">Apex Legends</div>
-                        <div class="feature-card">Among Us</div>
-                    </div>
-
-                    <p>But that's not all! We also organize exciting community events:</p>
-                    <div class="features-grid">
-                        <div class="feature-card">🎬 VALORANT Customs</div>
-                        <div class="feature-card">🎬 Movie Nights</div>
-                        <div class="feature-card">🎮 Gaming Nights</div>
-                        <div class="feature-card">🎉 Adult Events (Sometimes)</div>
-                    </div>
-
-                    <p>We have our own little family and we can not wait for you to join us ❤️</p>
-                    <p class="highlight text-center">So what are you waiting for?</p>
-                </div>
-            </div>
+        <div class="container about-content">
+            <h2>About Nocturnals</h2>
+            <p>We are a vibrant gaming community where fun, teamwork, and creativity meet!</p>
         </div>
     </section>
 
     <section id="minecraft">
-        <div class="container">
-            <h1>Minecraft Server</h1>
+        <div class="container minecraft-info">
+            <h3>Our Minecraft Server</h3>
+            <p>Join us for an exciting adventure in our Minecraft world!</p>
             <div class="content-card">
+                <h4>Server IP:</h4>
+                <div class="server-ip">play.nocturnalsmc.com</div>
+            </div>
+            <h3>Server Rules</h3>
+            <ul class="rules-list">
+                <li>Be respectful to others.</li>
+                <li>Griefing is prohibited.</li>
+                <li>No spamming in chat.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <p>If you have any questions, feel free to reach out!</p>
+            <div class="contact-info">
+                <p>Email us at: <a href="mailto:nocturnals@domain.com" class="email">nocturnals@domain.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Overlay and Content -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <h3>Join Our Discord Community</h3>
+            <p>Please make sure to read the rules in the Discord server to ensure a positive experience for everyone! 💖</p>
+            <button id="joinDiscordBtn" class="btn">Join Discord</button>
+            <button id="cancelBtn" class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle popup behavior
+        const discordBtn = document.getElementById('discordBtn');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const joinDiscordBtn = document.getElementById('joinDiscordBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+
+        // Show popup
+        discordBtn.addEventListener('click', () => {
+            popupOverlay.style.display = 'flex';
+        });
+
+        // Join Discord button click
+        joinDiscordBtn.addEventListener('click', () => {
+            window.location.href = 'https://discord.gg/babyboos';
+        });
+
+        // Cancel button click
+        cancelBtn.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
