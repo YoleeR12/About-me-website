@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -292,6 +290,110 @@
             font-family: monospace;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+            box-shadow: 0 4px 20px rgba(255, 105, 180, 0.2);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .modal-body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .modal-body p {
+            margin-bottom: 1rem;
+        }
+
+        .close-button {
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-button:hover {
+            color: var(--primary-color);
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .modal-button {
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-button.confirm {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .modal-button.cancel {
+            background-color: #f0f0f0;
+            color: var(--text-color);
+        }
+
+        .modal-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+        }
+
+        .modal-button.confirm:hover {
+            background-color: #ff1493;
+        }
+
+        .modal-button.cancel:hover {
+            background-color: #e0e0e0;
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 1rem;
@@ -336,7 +438,7 @@
             <p class="subtitle">Join our gaming community!</p>
             
             <div class="social-buttons">
-                <a onclick="confirmDiscord(event)" class="social-button">
+                <a onclick="showDiscordModal(event)" class="social-button">
                     <img src="discord.png" alt="Discord">
                     Discord
                 </a>
@@ -392,59 +494,3 @@
         <div class="container">
             <h1>Minecraft Server</h1>
             <div class="content-card">
-                <div class="minecraft-info">
-                    <h3>Server IPs</h3>
-                    <p><strong>Java:</strong> <span class="server-ip">mc.babyboos.eu</span></p>
-                    <p><strong>Bedrock:</strong> <span class="server-ip">mcb.babyboos.eu</span></p>
-                    <p><strong>Bedrock Port:</strong> <span class="server-ip">19132</span></p>
-
-                    <h3>Key Features</h3>
-                    <ul class="rules-list">
-                        <li><code>/rtp</code> - Random Teleport</li>
-                        <li><code>/claim</code> - Protect your land</li>
-                        <li><code>/tpa</code> - Teleport to friends</li>
-                        <li>VeinMiner - Hold Shift to mine veins of ore quickly</li>
-                    </ul>
-
-                    <h3>Additional Info</h3>
-                    <ul class="rules-list">
-                        <li>Server restarts every 12 hours</li>
-                        <li>Minecraft Version: 1.21.4 (Regular updates to latest version)</li>
-                        <li>Remember to grab the Minecraft Role in Discord for updates!</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <div class="content-card">
-                <p class="contact-info">Have questions? Reach out to us at:</p>
-                <a href="mailto:nocturnalsbusiness@gmail.com" class="email">nocturnalsbusiness@gmail.com</a>
-                
-                <div class="social-buttons">
-                    <a onclick="confirmDiscord(event)" class="social-button">
-                        <img src="discord.png" alt="Discord">
-                        Join our Discord
-                    </a>
-                    <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
-                        <img src="tiktok.png" alt="TikTok">
-                        Follow us on TikTok
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function confirmDiscord(event) {
-            event.preventDefault();
-            if (confirm('Make sure you read the rules in the discord!')) {
-                window.location.href = 'https://discord.gg/babyboos';
-            }
-        }
-    </script>
-</body>
-</html>
