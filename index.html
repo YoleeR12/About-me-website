@@ -3,87 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progress Bar</title>
+    <title>Nocturnals</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            color: #ff1493;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .social-buttons {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            gap: 20px;
         }
-        #progress-container {
-            width: 90%;
-            max-width: 500px;
-            background-color: #e0e0df;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        #progress-bar {
-            height: 30px;
-            width: 0%;
-            background-color: #76c7c0;
-            text-align: center;
-            line-height: 30px;
+
+        .social-button {
+            text-decoration: none;
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff1493;
             color: white;
+            font-size: 1rem;
             font-weight: bold;
-            transition: width 0.4s ease;
+            border-radius: 50px;
+            transition: background-color 0.3s;
         }
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #76c7c0;
+
+        .social-button:hover {
+            background-color: #ff69b4;
+        }
+
+        .social-button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease-in-out;
+        }
+
+        .popup-content {
+            background: #242424;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
             color: white;
+        }
+
+        .popup-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .popup-button {
+            padding: 0.8rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
+            background-color: #ff1493;
+            color: white;
+            font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #68b0a7;
+
+        .popup-button:hover {
+            background-color: #ff69b4;
         }
-        button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
+
+        .popup.hidden {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .popup:not(.hidden) {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div id="progress-container">
-        <div id="progress-bar">0%</div>
+    <!-- Main Content -->
+    <section id="home">
+        <div class="container">
+            <img src="Nocturnals.gif" alt="Nocturnals Logo" class="logo">
+            <h1>Welcome to Nocturnals</h1>
+            <p class="subtitle">Join our gaming community!</p>
+
+            <div class="social-buttons">
+                <!-- Discord Button -->
+                <a onclick="showPopup('Are you sure you want to join our Discord?')" class="social-button">
+                    <img src="discord.png" alt="Discord">
+                    Discord
+                </a>
+                <!-- TikTok Button -->
+                <a href="https://www.tiktok.com/@babyboos.eu" class="social-button">
+                    <img src="tiktok.png" alt="TikTok">
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Element -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <p id="popup-message">This is a popup message.</p>
+            <div class="popup-buttons">
+                <button onclick="confirmAction()" class="popup-button confirm">Okay</button>
+                <button onclick="closePopup()" class="popup-button cancel">Cancel</button>
+            </div>
+        </div>
     </div>
-    <button id="start-btn">Start Progress</button>
+
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const progressBar = document.getElementById("progress-bar");
-            const startButton = document.getElementById("start-btn");
-            let progress = 0;
-            let interval;
+        // JavaScript to handle the popup functionality
+        const popup = document.getElementById('popup');
+        const popupMessage = document.getElementById('popup-message');
 
-            const startProgress = () => {
-                if (interval) return; // Prevent multiple intervals
+        function showPopup(message) {
+            popupMessage.textContent = message;
+            popup.classList.remove('hidden');
+        }
 
-                startButton.disabled = true; // Disable button during progress
-                interval = setInterval(() => {
-                    if (progress < 100) {
-                        progress += 1; // Increment progress by 1%
-                        progressBar.style.width = `${progress}%`;
-                        progressBar.textContent = `${progress}%`;
-                    } else {
-                        clearInterval(interval);
-                        interval = null; // Reset interval
-                        startButton.disabled = false; // Re-enable button
-                        progress = 0; // Reset progress for the next run
-                    }
-                }, 100); // Update progress every 100ms
-            };
+        function closePopup() {
+            popup.classList.add('hidden');
+        }
 
-            startButton.addEventListener("click", startProgress);
-        });
+        function confirmAction() {
+            closePopup();
+            alert('You clicked Okay!');
+            // Additional actions can be added here
+        }
     </script>
 </body>
 </html>
